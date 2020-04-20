@@ -1,3 +1,5 @@
+var MySound;
+MySound = new sound("demosphereswitchroom.mp3");
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 const synth = window.speechSynthesis;
 const recognition = new SpeechRecognition();
@@ -26,6 +28,10 @@ const dictate = () => {
           speak(getTime);
       };
       
+      if (speechToText.includes('turn on the lights')) {
+          MySound.play();
+      };
+      
       if (speechToText.includes('what is today\'s date')) {
           speak(getDate);
       };
@@ -45,6 +51,11 @@ const speak = (action) => {
 const getTime = () => {
   const time = new Date(Date.now());
   return `the time is ${time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
+};
+
+const getlights = () => {
+  const time = new Date(Date.now())
+  return `Turing on the lights!`;
 };
 
 const getDate = () => {
