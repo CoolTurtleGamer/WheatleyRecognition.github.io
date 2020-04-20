@@ -1,5 +1,5 @@
 var MySound;
-MySound = new sound("demosphereswitchroom.mp3");
+MySound = new sound("http://cdn.frustra.org/sounds/sound/vo/wheatley/demosphereswitchroom03.mp3?id=1905");
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 const synth = window.speechSynthesis;
 const recognition = new SpeechRecognition();
