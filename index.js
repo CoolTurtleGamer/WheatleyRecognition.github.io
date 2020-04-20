@@ -1,5 +1,5 @@
-var MySound;
-MySound = new sound("http://cdn.frustra.org/sounds/sound/vo/wheatley/demosphereswitchroom03.mp3?id=1905");
+var bleep = new Audio();
+bleep.src = "demosphereswitchroom.mp3";
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 const synth = window.speechSynthesis;
 const recognition = new SpeechRecognition();
@@ -29,7 +29,7 @@ const dictate = () => {
       };
       
       if (speechToText.includes('turn on the lights')) {
-          MySound.play();
+          bleep.play();
       };
       
       if (speechToText.includes('what is today\'s date')) {
